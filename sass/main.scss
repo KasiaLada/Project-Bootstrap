@@ -17,7 +17,8 @@ body {
 
 nav {
 	text-transform: uppercase;
-	
+	z-index: 1;
+
 	.navbar-toggler {
 		padding: 15px;
 	}
@@ -43,7 +44,6 @@ nav {
 }
 
 header.hero-img {
-	
 	position: relative;
 	height: 100vh;
 	background-image: url('../img/hero-small.jpg');
@@ -51,7 +51,6 @@ header.hero-img {
 	background-size: cover;
 	background-attachment: fixed;
 	z-index: 0;
-
 
 	.hero-text {
 		display: flex;
@@ -72,5 +71,30 @@ header.hero-img {
 		height: 100%;
 		background-color: rgb(0, 0, 0, 0.8);
 		z-index: -5;
+	}
+	.fa-chevron-down {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+		font-size: 30px;
+		color: colors.$white;
+		
+	}
+}
+
+@media (min-width: 768px){
+	.hero-text{
+		h1{
+			font-size: 42px;
+		}
+		p{
+			font-size: 20px;
+		}
+	}
+}
+@media (min-width: 1200px) {
+	header.hero-img {
+		background-image: url('../img/hero-big.jpg');
 	}
 }
