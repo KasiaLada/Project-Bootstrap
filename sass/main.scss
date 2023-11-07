@@ -8,7 +8,6 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: colors.$bg-color;
-	color: colors.$white;
 }
 
 .gamers {
@@ -16,8 +15,18 @@ body {
 }
 .shadow-bg {
 	background-color: rgba(0, 0, 0, 0.9);
-	
 }
+.section-title {
+	text-align: center;
+	text-transform: uppercase;
+}
+.underline {
+	width: 60px;
+	height: 4px;
+	background-color: colors.$main-color;
+	margin: 0 auto 40px;
+}
+
 nav {
 	text-transform: uppercase;
 	z-index: 1;
@@ -62,6 +71,7 @@ header.hero-img {
 		align-items: center;
 		justify-content: center;
 		height: 100%;
+		color: colors.$white;
 	}
 	h1 {
 		text-transform: uppercase;
@@ -86,6 +96,19 @@ header.hero-img {
 	}
 }
 
+.aboutus {
+	i {
+		margin-top: 20px;
+		font-size: 30px;
+	}
+	.aboutus-card-title {
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+	.aboutus-card-text {
+		font-size: 14px;
+	}
+}
 @media (min-width: 768px) {
 	.hero-text {
 		h1 {
