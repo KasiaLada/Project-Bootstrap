@@ -14,9 +14,14 @@ body {
   color: #039dff;
 }
 
+.shadow-bg {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
 nav {
   text-transform: uppercase;
   z-index: 1;
+  transition: 0.6s;
 }
 nav .navbar-toggler {
   padding: 15px;
