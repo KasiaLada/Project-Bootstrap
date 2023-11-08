@@ -1,58 +1,65 @@
-@use './colors' as colors;
+@use './colors' as *;
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-body {
-	font-family: 'Montserrat', sans-serif;
-	background-color: colors.$bg-color;
+
+html {
+	scroll-padding-top: 74px;
 }
 
-.gamers {
-	color: colors.$main-color;
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #333;
 }
+
+.blue-text {
+	color: $main-color;
+}
+
 .shadow-bg {
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.8);
 }
+
 .section-title {
 	text-align: center;
 	text-transform: uppercase;
 }
+
 .underline {
+	margin: 0 auto 40px;
 	width: 60px;
 	height: 4px;
-	background-color: colors.$main-color;
-	margin: 0 auto 40px;
+	background-color: $main-color;
 }
 
 nav {
 	text-transform: uppercase;
-	z-index: 1;
-	transition: 0.6s;
+	transition: background-color 0.6s;
+	z-index: 5;
 
 	.navbar-toggler {
-		padding: 15px;
+		padding: 10px 15px;
 	}
+
 	.navbar-brand {
 		font-weight: bold;
 	}
-	.navbar-brand:hover {
-		color: colors.$main-color;
-	}
+
 	.nav-link,
-	.navbar-nav,
-	.show > .nav-link,
+	.navbar-nav .show > .nav-link,
 	.navbar-brand,
 	.fa-bars {
-		color: colors.$white;
+		color: $white;
 	}
+
 	.nav-link:focus,
 	.nav-link:hover,
 	.navbar-nav .nav-link.active,
 	.navbar-nav .show > .nav-link {
-		color: colors.$main-color;
+		color: $main-color;
 	}
 }
 
@@ -60,19 +67,12 @@ header.hero-img {
 	position: relative;
 	height: 100vh;
 	background-image: url('../img/hero-small.jpg');
-	background-position: center;
 	background-size: cover;
+	background-position: center;
 	background-attachment: fixed;
+	color: $white;
 	z-index: 0;
 
-	.hero-text {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-		color: colors.$white;
-	}
 	h1 {
 		text-transform: uppercase;
 	}
@@ -86,13 +86,22 @@ header.hero-img {
 		background-color: rgb(0, 0, 0, 0.8);
 		z-index: -5;
 	}
+
+	.hero-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+	}
+
 	.fa-chevron-down {
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
 		bottom: 20px;
 		font-size: 30px;
-		color: colors.$white;
+		color: $white;
 	}
 }
 
@@ -101,6 +110,7 @@ header.hero-img {
 		margin-top: 20px;
 		font-size: 30px;
 	}
+
 	.aboutus-card-title {
 		font-size: 18px;
 		text-transform: uppercase;
@@ -108,17 +118,69 @@ header.hero-img {
 	.aboutus-card-text {
 		font-size: 14px;
 	}
+
+	.aboutus-hover {
+		transition: color 0.3s;
+	}
+
+	.aboutus-hover:hover {
+		color: $main-color;
+	}
 }
+
+.aboutus-hero {
+	position: relative;
+	background-image: url('../img/about-hero-small.jpg');
+	background-size: cover;
+	background-position: center;
+	color: $light-gray;
+	z-index: 0;
+
+	.aboutus-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -5;
+	}
+
+	.aboutus-hero-item {
+		margin: 10px 0;
+
+		i {
+			font-size: 36px;
+		}
+
+		.aboutus-hero-title {
+			font-size: 24px;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	.hero-text {
 		h1 {
 			font-size: 42px;
 		}
+
 		p {
 			font-size: 20px;
 		}
 	}
 }
+
+@media (min-width: 992px) {
+	html {
+		scroll-padding-top: 72px;
+	}
+
+	.aboutus-hero {
+		background-image: url('../img/about-hero-big.jpg');
+	}
+}
+
 @media (min-width: 1200px) {
 	header.hero-img {
 		background-image: url('../img/hero-big.jpg');
