@@ -12,7 +12,7 @@ html {
 
 body {
 	font-family: 'Montserrat', sans-serif;
-	background-color: #333;
+	background-color: $bg-color;
 }
 
 .blue-text {
@@ -172,7 +172,48 @@ header.hero-img {
 	.carousel-indicators {
 		padding-bottom: 20px;
 	}
-	
+}
+.prices {
+	.price-box {
+		margin: 20px;
+		background-color: $white;
+		padding: 30px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+		transition: scale 0.3s;
+
+		span {
+			font-weight: bold;
+		}
+		i {
+			padding: 0 5px;
+			font-style: 24px;
+		}
+		button {
+			padding: 10px 20px;
+			text-transform: uppercase;
+		}
+	}
+	.price-box:hover {
+		scale: 1.05;
+	}
+
+	.price-title {
+		color: $main-color;
+		text-transform: uppercase;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.price-tag {
+		font-weight: bold;
+		font-size: 30px;
+	}
+	.price-info {
+		margin-top: 30px;
+		a {
+			text-decoration: none;
+		}
+	}
 }
 
 @media (min-width: 768px) {
